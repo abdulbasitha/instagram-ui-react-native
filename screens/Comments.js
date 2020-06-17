@@ -25,7 +25,7 @@ class Comments extends Component {
         isLoading:true
     }
     componentDidMount() {
-        fetch('http://cookbookrecipes.in/test.php')
+        fetch('https://cookbookrecipes.in/test.php')
             .then((response) => response.json())
             .then((responseJson) => {
                 //  console.log(responseJson);
