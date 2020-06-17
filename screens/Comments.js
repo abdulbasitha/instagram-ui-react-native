@@ -21,7 +21,8 @@ const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 class Comments extends Component {
     state = {
-        data: []
+        data: [],
+        isLoading:true
     }
     componentDidMount() {
         fetch('http://cookbookrecipes.in/test.php')
@@ -35,6 +36,9 @@ class Comments extends Component {
             })
             .catch((error) => {
                 console.error(error);
+                this.setState({
+                    isLoading: false
+                })
             });
     }
     renderComments = () => {
